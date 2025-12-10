@@ -10,6 +10,10 @@
   Google Font 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Project styles (moved into /css) -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cursor.css">
+
   <style>
     :root{
       --bg:#f5f7fb;
@@ -392,11 +396,15 @@
       <div class="hero-search" role="search" aria-label="Apartment search">
         <div class="search-field">
           <div class="icon">📍</div>
-          <input type="text" placeholder="City, locality or project (e.g., Mumbai, Andheri...)" aria-label="Search input" />
+          <input id="hero-location" type="text" placeholder="City, locality or project (e.g., Mumbai, Andheri...)" aria-label="Search input" />
           <div class="icon">🗓</div>
           <div class="icon">👥</div>
         </div>
-        <button class="search-btn">Search</button>
+        <button id="hero-search" class="search-btn">Search</button>
+        <!-- hidden hero filters expected by js (defaults) -->
+        <input type="hidden" id="hero-bhk" value="all">
+        <input type="hidden" id="hero-availability" value="all">
+        <input type="hidden" id="hero-price" value="all">
       </div>
     </section>
 
@@ -406,45 +414,10 @@
       <section aria-labelledby="featured">
         <div class="section-title" id="featured">
           <strong>Featured Apartments</strong>
+          <button id="view-all" class="btn-outline" style="margin-left:auto;">View all</button>
         </div>
 
-        <div class="grid" role="list">
-          <article class="card" role="listitem" aria-label="1BHK">
-            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f10ed7f1078d806c7c65b7a8dc36a23');"></div>
-            <div class="meta">
-              <div class="title">1 BHK Apartment</div>
-              <div class="sub">Bandra West • 28 sqm</div>
-              <div class="row">
-                <div><strong>₹18,000 / mo</strong></div>
-                <div><button class="btn-outline">View Details</button></div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card" role="listitem" aria-label="2BHK">
-            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1572120360610-d971b9c6d29b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b4cb8e4c7b1a8a2b715f7c7c3dbd8f1');"></div>
-            <div class="meta">
-              <div class="title">2 BHK Family Flat</div>
-              <div class="sub">Powai • 65 sqm</div>
-              <div class="row">
-                <div><strong>₹35,000 / mo</strong></div>
-                <div><button class="btn-outline">View Details</button></div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card" role="listitem" aria-label="3BHK">
-            <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b0b5c91b5d4e33c4a8f6cbb50a3ee9a');"></div>
-            <div class="meta">
-              <div class="title">3 BHK Premium</div>
-              <div class="sub">Lower Parel • 110 sqm</div>
-              <div class="row">
-                <div><strong>₹78,000 / mo</strong></div>
-                <div><button class="btn-outline">View Details</button></div>
-              </div>
-            </div>
-          </article>
-        </div>
+        <div class="cards-grid" id="featured-grid"></div>
       </section>
 
       <!-- Why choose us -->
@@ -524,8 +497,47 @@
         </div>
       </section>
 
+      <!-- Browse (listings rendered by cursor.js) -->
+      <section id="browse" style="margin-top:28px;">
+        <div class="section-title"><strong>Browse Properties</strong></div>
+        <div class="shell section__head section__head--center">
+          <div>
+            <p class="eyebrow">Browse properties</p>
+            <h2 id="results-count">Properties found</h2>
+          </div>
+        </div>
+        <nav class="listings-nav" aria-label="Property listings">
+          <div class="cards-grid" id="listings-grid"></div>
+        </nav>
+      </section>
+
     </div> <!-- /.container -->
   </main>
+
+  <!-- DETAILS MODAL (moved from cursor.html) -->
+  <div class="modal" id="details-modal" aria-hidden="true">
+    <div class="modal__overlay" id="modal-overlay"></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" id="modal-close">✕</button>
+      <div class="modal__img" id="modal-img"></div>
+      <div class="modal__body">
+        <p class="eyebrow" id="modal-availability"></p>
+        <h3 id="modal-title"></h3>
+        <p class="muted" id="modal-location"></p>
+        <div class="modal__price" id="modal-price"></div>
+        <div class="chips" id="modal-tags"></div>
+        <div class="modal__gallery">
+          <div class="modal__main-img" id="modal-main-img"></div>
+          <div class="modal__thumbs" id="modal-thumbs"></div>
+        </div>
+        <div class="modal__facts" id="modal-facts"></div>
+        <div class="modal__amenities">
+          <h4>Amenities</h4>
+          <div class="chips" id="modal-amenities"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -557,5 +569,9 @@
     </div>
   </footer>
 
-</body>
+  </footer>
+
+    <!-- Project scripts (moved into /js) -->
+    <script src="js/cursor.js"></script>
+  </body>
 </html>

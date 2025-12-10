@@ -25,7 +25,6 @@
       </div>
     </div>
   </header>
-
   <main>
     <!-- Hero + search -->
     <section class="hero" id="home">
@@ -33,177 +32,16 @@
         <p class="eyebrow">Discover thousands of verified listings</p>
         <h1>Find your next home without the hassle.</h1>
         <p class="lede">Browse curated properties for rent or sale, compare amenities, and connect with trusted agents instantly.</p>
-      </div>
-    </section>
-
-    <!-- Collections -->
-    <section class="section shell">
-      <div class="section__head">
-        <div>
-          <p class="eyebrow">Collections</p>
-          <h2>Explore property collections</h2>
-          <p class="muted">We’ve got something for everyone.</p>
-        </div>
-      </div>
-      <div class="collections">
-        <article class="collection-card" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop');">
-          <div>
-            <p>Starter Homes</p>
-            <strong>2,500+</strong>
-          </div>
-        </article>
-        <article class="collection-card" style="background-image:url('https://images.unsplash.com/photo-1505692069463-5e3405e3e7ee?q=80&w=1200&auto=format&fit=crop');">
-          <div>
-            <p>Luxury Villas</p>
-            <strong>850+</strong>
-          </div>
-        </article>
-        <article class="collection-card" style="background-image:url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1200&auto=format&fit=crop');">
-          <div>
-            <p>Modern Apartments</p>
-            <strong>3,200+</strong>
-          </div>
-        </article>
-        <article class="collection-card" style="background-image:url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop');">
-          <div>
-            <p>Ready to Move</p>
-            <strong>1,100+</strong>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Featured -->
-    <section class="section shell" id="featured">
-      <div class="section__head">
-        <div>
-          <p class="eyebrow">Featured</p>
-          <h2>Featured properties</h2>
-          <p class="muted">Handpicked options for you.</p>
-        </div>
-        <button class="ghost-btn" id="view-all">View all</button>
-      </div>
-      <div class="cards-grid" id="featured-grid"></div>
-    </section>
-
-    <!-- Why choose -->
-    <section class="section shell why">
-      <div class="section__head">
-        <div>
-          <p class="eyebrow">Why choose us</p>
-          <h2>Your trusted real estate partner</h2>
-        </div>
-      </div>
-      <div class="why__grid">
-        <div class="why__card">
-          <div class="why__icon">🏢</div>
-          <div>
-            <h4>10,000+ properties</h4>
-            <p>Curated homes across major cities.</p>
-          </div>
-        </div>
-        <div class="why__card">
-          <div class="why__icon">✅</div>
-          <div>
-            <h4>Verified listings</h4>
-            <p>Photos, floorplans, and docs checked.</p>
-          </div>
-        </div>
-        <div class="why__card">
-          <div class="why__icon">📊</div>
-          <div>
-            <h4>Market insights</h4>
-            <p>Smart recommendations by budget.</p>
-          </div>
-        </div>
-        <div class="why__card">
-          <div class="why__icon">🤝</div>
-          <div>
-            <h4>Expert support</h4>
-            <p>Guidance from onboarding to move-in.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section shell">
-      <div class="section__head">
-        <div>
-          <p class="eyebrow">Testimonials</p>
-          <h2>What our customers say</h2>
-        </div>
-      </div>
-      <div class="testimonials">
-        <article class="testimonial">
-          <div class="testimonial__icon">★★★★★</div>
-          <p>“Found a great apartment through HomeFinder. Transparent pricing and quick responses.”</p>
-          <span>— Rahul Sharma</span>
-        </article>
-        <article class="testimonial">
-          <div class="testimonial__icon">★★★★★</div>
-          <p>“Verified photos gave me confidence. Closed a villa without any surprises.”</p>
-          <span>— Priya Patel</span>
-        </article>
-        <article class="testimonial">
-          <div class="testimonial__icon">★★★★☆</div>
-          <p>“Filters are spot on. Shortlisted homes in minutes and the agent was helpful.”</p>
-          <span>— Amit Kumar</span>
-        </article>
-      </div>
-    </section>
-
-    <!-- Browse -->
-    <div class="shell section__head section__head--center">
-      <div>
-        <p class="eyebrow">Browse properties</p>
-        <h2 id="results-count">Properties found</h2>
-      </div>
-    </div>
-    <nav class="listings-nav" aria-label="Property listings">
-      <div class="cards-grid" id="listings-grid"></div>
-    </nav>
-
-    <!-- Details modal -->
-    <div class="modal" id="details-modal" aria-hidden="true">
-      <div class="modal__overlay" id="modal-overlay"></div>
-      <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button class="modal__close" id="modal-close">✕</button>
-        <div class="modal__img" id="modal-img"></div>
-        <div class="modal__body">
-          <p class="eyebrow" id="modal-availability"></p>
-          <h3 id="modal-title"></h3>
-          <p class="muted" id="modal-location"></p>
-          <div class="modal__price" id="modal-price"></div>
-          <div class="chips" id="modal-tags"></div>
-          <div class="modal__gallery">
-            <div class="modal__main-img" id="modal-main-img"></div>
-            <div class="modal__thumbs" id="modal-thumbs"></div>
-          </div>
-          <div class="modal__facts" id="modal-facts"></div>
-          <div class="modal__amenities">
-            <h4>Amenities</h4>
-            <div class="chips" id="modal-amenities"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer class="footer" id="contact">
-    <div class="shell footer__inner">
-      <div>
-        <h4>HomeFinder</h4>
-        <p class="muted">Helping you discover the perfect place to live, backed by verified listings and experts.</p>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>Email: hello@homefinder.com</p>
-        <p>Phone: +91 98765 43210</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="cursor.js"></script>
-</body>
-</html>
+      <!doctype html>
+      <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Moved — Open index.html</title>
+          <meta http-equiv="refresh" content="0; url=index.html">
+          <script>window.location.replace('index.html');</script>
+        </head>
+        <body>
+          <p>If you see this page, <a href="index.html">open the site index</a>.</p>
+        </body>
+      </html>

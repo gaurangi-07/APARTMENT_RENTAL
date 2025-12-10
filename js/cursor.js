@@ -1,3 +1,4 @@
+// cursor.js (moved into /js)
 // Sample data (monthly rent, realistic ranges)
 const apartments = [
   { id: 1, title: "Modern 1 BHK Apartment", location: "HSR Layout, Bangalore", city: "Bangalore", bhk: 1, furnishing: "fully", rent: 18000, availability: "available", area: 650, deposit: 40000, maintenance: 1500, petsAllowed: true, amenities: ["Parking", "Power Backup", "Gated Security", "Lift"], images: [
@@ -211,7 +212,8 @@ const wireHeroSearch = () => {
     document.getElementById("filter-price").value = filters.price;
 
     applyFilters();
-    document.getElementById("browse").scrollIntoView({ behavior: "smooth" });
+    const browse = document.getElementById("browse");
+    if (browse) browse.scrollIntoView({ behavior: "smooth" });
   });
 };
 
@@ -246,7 +248,8 @@ const init = () => {
   const viewAll = document.getElementById("view-all");
   if (viewAll) {
     viewAll.addEventListener("click", () => {
-      document.getElementById("browse").scrollIntoView({ behavior: "smooth" });
+      const browse = document.getElementById("browse");
+      if (browse) browse.scrollIntoView({ behavior: "smooth" });
     });
   }
 };
