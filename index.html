@@ -406,6 +406,51 @@
         <input type="hidden" id="hero-availability" value="all">
         <input type="hidden" id="hero-price" value="all">
       </div>
+      
+      <!-- Visible filters bar (appears below the hero search) -->
+      <div class="filters-bar container" style="margin-top:18px;">
+        <div class="filter-item">
+          <input id="filter-location" type="text" placeholder="Location, city or locality" />
+        </div>
+        <div class="filter-item">
+          <select id="filter-bhk">
+            <option value="all">Any BHK</option>
+            <option value="1">1 BHK</option>
+            <option value="2">2 BHK</option>
+            <option value="3">3 BHK</option>
+            <option value="4">4 BHK</option>
+            <option value="5">5 BHK</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <select id="filter-furnishing">
+            <option value="all">Any furnishing</option>
+            <option value="fully">Fully furnished</option>
+            <option value="semi">Semi furnished</option>
+            <option value="none">Unfurnished</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <select id="filter-availability">
+            <option value="all">Any availability</option>
+            <option value="available">Available now</option>
+            <option value="soon">Coming soon</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <select id="filter-price">
+            <option value="all">Any price</option>
+            <option value="0-20000">Up to ₹20,000</option>
+            <option value="20001-50000">₹20k - ₹50k</option>
+            <option value="50001-100000">₹50k - ₹1,00,000</option>
+            <option value="100000+">₹1,00,000+</option>
+          </select>
+        </div>
+        <div class="filter-actions">
+          <button id="apply-filters" class="btn-outline">Apply</button>
+          <button id="clear-filters" class="btn-outline">Clear</button>
+        </div>
+      </div>
     </section>
 
     <div class="container">
@@ -573,5 +618,24 @@
 
     <!-- Project scripts (moved into /js) -->
     <script src="js/cursor.js"></script>
+    <script>
+      // Apply button triggers 'change' or 'input' events on filter controls so the existing listeners in js/cursor.js run
+      (function(){
+        const apply = document.getElementById('apply-filters');
+        if (!apply) return;
+        apply.addEventListener('click', () => {
+          const ids = ['filter-location','filter-bhk','filter-furnishing','filter-availability','filter-price'];
+          ids.forEach((id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const evType = (el.tagName.toLowerCase() === 'input') ? 'input' : 'change';
+            const ev = new Event(evType, { bubbles: true });
+            el.dispatchEvent(ev);
+          });
+          const browse = document.getElementById('browse');
+          if (browse) browse.scrollIntoView({ behavior: 'smooth' });
+        });
+      })();
+    </script>
   </body>
 </html>

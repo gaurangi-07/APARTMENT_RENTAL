@@ -54,3 +54,36 @@ nav {
 .search-container button:hover {
     background-color: #009acd;
 }
+
+/* Filters bar styles added for visible filters below hero */
+.filters-bar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+    background:transparent;
+    padding:10px 20px;
+    border-radius:10px;
+}
+.filters-bar .filter-item{ flex: 1 1 180px; }
+.filters-bar input[type="text"], .filters-bar select{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    font-size:14px;
+}
+.filters-bar .filter-actions{ display:flex; gap:8px; align-items:center; }
+.filters-bar .btn-outline{
+    padding:10px 14px;
+    border-radius:8px;
+    background:white;
+    border:1px solid rgba(11,79,108,0.12);
+    cursor:pointer;
+    font-weight:700;
+}
+
+@media (max-width:800px){
+    .filters-bar{ gap:8px; }
+    .filters-bar .filter-item{ flex: 1 1 140px; }
+}
