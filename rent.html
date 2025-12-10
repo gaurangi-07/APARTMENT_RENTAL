@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rent Properties — GSG.Co</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cursor.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="brand"><div class="mark">G</div><div class="name">GSG.Co</div></div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="buy.html">Buy</a>
+        <a href="rent.html">Rent</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions"><a class="icon-btn" href="login.html">👤</a></div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section style="padding:28px 0;">
+      <h2>Properties for Rent</h2>
+      <p class="muted">Browse properties listed for renting.</p>
+    </section>
+
+    <section id="browse">
+      <div class="section__head section__head--center">
+        <div>
+          <p class="eyebrow">Rent Listings</p>
+          <h2 id="results-count">Properties found</h2>
+        </div>
+      </div>
+      <div class="cards-grid" id="listings-grid"></div>
+    </section>
+  </main>
+
+  <footer style="margin-top:40px;padding:28px 20px;text-align:center;color:var(--muted)">GSG.Co — Demo</footer>
+
+  <script src="js/cursor.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      if (typeof filters !== 'undefined') {
+        filters.purpose = 'rent';
+        applyFilters();
+      }
+    });
+  </script>
+</body>
+</html>
