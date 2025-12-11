@@ -2,40 +2,40 @@
 // Expanded dataset so filters return multiple results across permutations
 const apartments = [
   { id: 1, title: "Modern 1 BHK Apartment", location: "HSR Layout, Bangalore", city: "Bangalore", bhk: 1, furnishing: "fully", rent: 18000, availability: "available", area: 650, deposit: 40000, maintenance: 1500, petsAllowed: true, amenities: ["Parking", "Power Backup", "Gated Security", "Lift"], images: [
-  "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1505692069463-5e3405e3e7ee?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop"
+  "https://images.unsplash.com/photo-1512914979634-19722ac3b7e1?w=800&h=600&fit=crop", // living room
+  "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&h=600&fit=crop", // bedroom
+  "https://images.unsplash.com/photo-1505693314967-8e76518801d8?w=800&h=600&fit=crop", // kitchen
+  "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=600&fit=crop" // apartment exterior
   ] },
   { id: 2, title: "Spacious 2 BHK Flat", location: "Powai, Mumbai", city: "Mumbai", bhk: 2, furnishing: "semi", rent: 45000, availability: "available", area: 1050, deposit: 120000, maintenance: 3500, petsAllowed: false, amenities: ["Parking", "Gym", "Swimming Pool", "Power Backup", "Lift"], images: [
-  "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1512914979634-19722ac3b7e1?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&h=600&fit=crop"
+  "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?w=800&h=600&fit=crop", // living room
+  "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&h=600&fit=crop", // bedroom
+  "https://images.unsplash.com/photo-1544453682-5a08ca71c6eb?w=800&h=600&fit=crop", // kitchen
+  "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=600&fit=crop" // apartment exterior
   ] },
   { id: 3, title: "2 BHK Apartment for Rent", location: "Andheri East, Mumbai", city: "Mumbai", bhk: 2, furnishing: "semi", rent: 28000, availability: "available", area: 950, deposit: 75000, maintenance: 2000, petsAllowed: true, amenities: ["Parking", "Lift", "CCTV"], images: [
-  "https://images.unsplash.com/photo-1499914485622-a88fac536b3e?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1484156818044-c040038b0710?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1505693415763-3ed5e04ba4cd?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&h=600&fit=crop"
+  "https://images.unsplash.com/photo-1512914979634-19722ac3b7e1?w=800&h=600&fit=crop", // living room
+  "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&h=600&fit=crop", // bedroom
+  "https://images.unsplash.com/photo-1505693314967-8e76518801d8?w=800&h=600&fit=crop", // kitchen
+  "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=600&fit=crop" // apartment exterior
   ] },
   { id: 4, title: "Luxury 5 BHK Villa", location: "Jubilee Hills, Hyderabad", city: "Hyderabad", bhk: 5, furnishing: "fully", rent: 450000, availability: "available", area: 5200, deposit: 800000, maintenance: 15000, petsAllowed: true, amenities: ["Parking", "Pool", "Garden", "Gym", "Security"], images: [
-  "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1544453682-5a08ca71c6eb?w=800&h=600&fit=crop"
+  "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?w=800&h=600&fit=crop", // villa living room
+  "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&h=600&fit=crop", // villa bedroom
+  "https://images.unsplash.com/photo-1544453682-5a08ca71c6eb?w=800&h=600&fit=crop", // villa kitchen
+  "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=600&fit=crop" // villa exterior
   ] },
   { id: 5, title: "2 BHK Budget Apartment", location: "Electronic City, Bangalore", city: "Bangalore", bhk: 2, furnishing: "none", rent: 25000, availability: "available", area: 880, deposit: 60000, maintenance: 1200, petsAllowed: false, amenities: ["Parking", "Power Backup"], images: [
-  "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1433838552652-f9a46b332c40?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1512914890250-353c97c9e7cc?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop"
+  "https://images.unsplash.com/photo-1512914979634-19722ac3b7e1?w=800&h=600&fit=crop", // living room
+  "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&h=600&fit=crop", // bedroom
+  "https://images.unsplash.com/photo-1505693314967-8e76518801d8?w=800&h=600&fit=crop", // kitchen
+  "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=600&fit=crop" // apartment exterior
   ] },
   { id: 6, title: "Premium 3 BHK Penthouse", location: "Gachibowli, Hyderabad", city: "Hyderabad", bhk: 3, furnishing: "fully", rent: 185000, availability: "soon", area: 2700, deposit: 350000, maintenance: 9000, petsAllowed: true, amenities: ["Parking", "Pool", "Gym", "Sky Deck", "Security"], images: [
-  "https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop"
+  "https://images.unsplash.com/photo-1512914979634-19722ac3b7e1?w=800&h=600&fit=crop", // living room
+  "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&h=600&fit=crop", // bedroom
+  "https://images.unsplash.com/photo-1505693314967-8e76518801d8?w=800&h=600&fit=crop", // kitchen
+  "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=600&fit=crop" // apartment exterior
   ] },
   { id: 7, title: "Commercial Office Space", location: "Bandra Kurla Complex, Mumbai", city: "Mumbai", bhk: 0, furnishing: "semi", rent: 250000, availability: "available", area: 1800, deposit: 500000, maintenance: 12000, petsAllowed: false, amenities: ["Parking", "Power Backup", "Lift", "Security"], images: [
   "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
